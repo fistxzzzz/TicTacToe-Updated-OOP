@@ -1,5 +1,4 @@
 from settings_game.board_tic import Board
-from time import sleep
 
 class Player(Board):
     def __init__(self):
@@ -8,19 +7,18 @@ class Player(Board):
         self.marker2 = 'O'
         self.x_name = ''
         self.y_name = ''
-        self.game_start_official = False
+        self.game_start_official = None
     
     def choose_player(self):
+        self.game_start_official = False
         self.board_display()
         print("Now, We gotta choose our markers Either 'X' or 'O' \nPlayer 1 gets 'X' while Player 2 gets 'O'")
         while self.x_name == '':
             self.x_name = input("Enter the name of the first player who wants to play 'X' : ")
         print(f"Welcome!, {self.x_name.capitalize()} 'X' ")
-        sleep(.5)
         while self.y_name == '':
             self.y_name = input("Enter the name of the second player who wants to play 'Y' : ")
         print(f"Welcome!, {self.y_name.capitalize()} 'O' ")
-        sleep(.5)
         self.board_display()
         print("Please Go through the numbers of this board and type 'y' when ready or 'q' to quit")
         game_start_req = str()
