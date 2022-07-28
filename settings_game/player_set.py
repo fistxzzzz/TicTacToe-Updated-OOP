@@ -1,5 +1,5 @@
 from settings_game.board_tic import Board
-import time
+from time import sleep
 
 class Player(Board):
     def __init__(self):
@@ -8,6 +8,7 @@ class Player(Board):
         self.marker2 = 'O'
         self.x_name = ''
         self.y_name = ''
+        self.game_start_official = False
     
     def choose_player(self):
         self.board_display()
@@ -15,7 +16,17 @@ class Player(Board):
         while self.x_name == '':
             self.x_name = input("Enter the name of the first player who wants to play 'X' : ")
         print(f"Welcome!, {self.x_name.capitalize()} 'X' ")
-        time.sleep(2)
+        sleep(.5)
         while self.y_name == '':
             self.y_name = input("Enter the name of the second player who wants to play 'Y' : ")
         print(f"Welcome!, {self.y_name.capitalize()} 'O' ")
+        sleep(.5)
+        self.board_display()
+        print("Please Go through the numbers of this board and type 'y' when ready or 'q' to quit")
+        game_start_req = str()
+        while game_start_req.lower() not in ['y', 'q']:
+            game_start_req = input()
+        if game_start_req.lower() == 'y':
+            self.game_start_official = True
+        elif game_start_req.lower() == 'q':
+            quit()
