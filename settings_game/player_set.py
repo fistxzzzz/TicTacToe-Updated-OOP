@@ -1,4 +1,4 @@
-from board_tic import Board
+from settings_game.board_tic import Board
 import time
 
 class Player(Board):
