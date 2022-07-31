@@ -7,10 +7,9 @@ class Player(Board):
         self.marker2 = 'O'
         self.x_name = ''
         self.y_name = ''
-        self.game_start_official = None
+        self.game_start_official = True
     
     def choose_player(self):
-        self.game_start_official = False
         self.board_display()
         print("Now, We gotta choose our markers Either 'X' or 'O' \nPlayer 1 gets 'X' while Player 2 gets 'O'")
         while self.x_name == '':

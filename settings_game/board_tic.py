@@ -3,6 +3,7 @@
 class Board:
     def __init__(self):
         self.board_num = ['N', '1','2','3','4','5','6','7','8','9']
+        self.set_of_used_nums = []
 
     def board_display(self):
         print(f"  {self.board_num[7]}   |  {self.board_num[8]}   |   {self.board_num[9]}  ")
